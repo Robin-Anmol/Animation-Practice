@@ -1,0 +1,204 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;500&display=swap");
+* {
+  margin: 0px;
+  padding: 0px;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+
+  min-height: 100vh;
+  font-family: "Ubuntu", sans-serif;
+  background: linear-gradient(-45deg, #3f0071, #000000, #290fba, #000000);
+  background-size: 600% 600%;
+  animation: body 10s linear infinite alternate;
+}
+@keyframes body {
+  0% {
+    background-position: 0%;
+  }
+
+  100% {
+    background-position: 100%;
+  }
+}
+
+section::before {
+  content: " ";
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  opacity: 0.8;
+  background: linear-gradient(
+    45deg,
+    rgb(238, 255, 0),
+    #20ee09,
+    rgb(0, 255, 242),
+    #2f00ff
+  );
+  clip-path: circle(30% at left 90%);
+  background-size: 600% 600%;
+  animation: colorbefore 1.4s ease-in-out infinite alternate;
+}
+
+@keyframes colorbefore {
+  0% {
+    background-position: 0%;
+  }
+
+  50% {
+    background-position: 50%;
+  }
+  100% {
+    background-position: 100%;
+  }
+}
+
+section::after {
+  content: " ";
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    45deg,
+    #ff00e4,
+    rgb(243, 243, 7),
+    #1db9c3,
+    #6ecb63
+  );
+  clip-path: circle(30% at 99% 10%);
+  background-size: 600% 600%;
+  animation: colour 1.4s linear infinite alternate;
+}
+
+@keyframes colour {
+  0% {
+    background-position: 0%;
+  }
+
+  50% {
+    background-position: 50%;
+  }
+  100% {
+    background-position: 100%;
+  }
+}
+.container {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 40px 0;
+}
+.container .card {
+  position: relative;
+  width: 300px;
+  height: 400px;
+  background: rgba(255, 255, 255, 0.05);
+  margin: 20px;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(40px);
+  box-shadow: 3.5px 3.5px 8px rgba(255, 255, 255, 0.5);
+
+  flex-wrap: wrap;
+}
+
+.container .card .content {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  opacity: 0.7;
+}
+.container .card:hover .content {
+  opacity: 1;
+  transition-delay: cal(0.1s * var(--i));
+  transform: translateY(-20px);
+  transition: 0.5s;
+}
+
+.container .card .content .img {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 5px solid rgba(199, 16, 255, 0.5);
+}
+.container .card .content .img img {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.container .card .content .content-box h2 {
+  color: rgb(255, 255, 255);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 800;
+  font-size: 24px;
+  text-align: center;
+  margin: 20px 0px 10px;
+  line-height: 1.1em;
+}
+
+.container .card .content .content-box h3 {
+  color: rgb(251, 255, 0);
+  text-transform: uppercase;
+  font-style: italic;
+  letter-spacing: 2px;
+  font-weight: 700;
+  font-size: 16px;
+  text-align: center;
+  margin: 10px 0px;
+  line-height: 1.1em;
+}
+
+.container .card .link {
+  position: absolute;
+  bottom: 40px;
+  display: flex;
+}
+.container .card .link li {
+  list-style: none;
+  margin: 0 10px;
+  transform: translateY(40px);
+  transition: 1s;
+  opacity: 0;
+  transition-delay: cal(0.1s * var(--i));
+}
+.container .card:hover .link li {
+  transform: translateY(0px);
+  opacity: 1;
+}
+.container .card .link li a {
+  color: #ffffff;
+  font-size: 24px;
+}
+
+#icon1:hover {
+  color: #3b5998;
+  font-size: 24px;
+}
+#icon2:hover {
+  color: #ea00ff;
+  font-size: 24px;
+}
+#icon3:hover {
+  color: #4c00ff;
+  font-size: 24px;
+}
